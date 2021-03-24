@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+	<!-- En head tenemos información relevante a ficheros -->
+	<head>
+		<title>VIREMA: cine online</title>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+
+	<!-- En el body usamos un estilo que definimos en styles.css de manera que se altera
+ 	todo el fondo por uno más colorido y vivo-->
+	<body>
+
+		<!-- la cabecera consta de dos elementos, un logo puesto a un lado y un titulo en grande puesto en
+	 	el lado opuesto. Ambos elementos son flex-item y están contenidos en un flex-container, son más manejables así-->
+		<header class="flex-container anchura">
+		  <aside class="flex-item formatoLogo">
+			  <a href="https://facebook.com/">
+				  <img class="dimensionesImgLogo centrar" alt="Logo de la página" src="imgs/logo-virema.png">
+			  </a>
+		  </aside>
+		  <header class="flex-item formatoTitulo">Virema</header>
+		</header>
+
+		<!-- EL cambio que queda por hacer es crear una clase en el main que agrupe tanto el aside como el contenido principal
+	 	además tendremos que agrupar por areas, definiendo etiquetas grid-area o como sea que se llamen si es necesario-->
+
+
+
+
+
+		<!-- contenido princiapl y más importante de la página, usamos un grid container para contener a todos los grid-item-->
+		<!-- Todos los grid-item están encerrados en un enlace de manera que cuando se pulsa cualquier parte de dicho grid-item se pasa a la siguiente pagina -->
+		<main class="main-container">
+
+			<!-- Definimos un aside, estará en el lado izquierdo de la pantalla y en él tenemos un nav ya que el cntenido que
+			que va a contener es un conjunto de enlaces relevantes-->
+			<aside>
+				<nav class="list-container">
+					<div class="list-item">
+						<a href="https://editorial.rottentomatoes.com/guide/essential-comedy-movies/" target="_blank">Top comedias de este siglo</a>
+					</div>
+					<div class="list-item">
+						<a href="https://www.filmaffinity.com/es/movie-group.php?group-id=549" target="_blank">Historias para no dormir ;)</a>
+					</div>
+					<div class="list-item">
+						<a href="https://www.espinof.com/listas/las-mejores-peliculas-de-accion-de-la-historia" target="_blank">Películas de acción recomendadas</a>
+					</div>
+					<div class="list-item">
+						<a href="https://www.espinof.com/listas/mejores-peliculas-ciencia-ficcion-historia" target="_blank">Ciencia ficción: una mirada al futuro</a>
+					</div>
+					<div class="list-item">
+						<a href="http://www.sensacine.com/peliculas/estrenos/es/" target="_blank">No te pierdas los próximos estrenos</a>
+					</div>
+					<div class="list-item">
+						<a href="https://taquilladecine.com/peliculas-mas-taquilleras-2020/" target="_blank">Películas mas taquilleras del 2020</a>
+					</div>
+					<div class="list-item">
+						<a href="https://www.goldenglobes.com/article class="grid-item"s/los-efectos-del-coronavirus-en-el-cine-mundial-al-momento" target="_blank">COVID: efecto en el cine</a>
+					</div>
+				</nav>
+			</aside>
+
+
+			<!-- los grid-item son articulos, ya que contienen son totalmente independientes de los otros items y
+		 	además tiene su propio título y están divididos en cabecera y sección-->
+
+			<section class="grid-container">
+				<a href="eventos/titanic.html" class="dimensionesEnlazado">
+					<article class="grid-item" title="Titanic: podía haber compartido el tablón \:V/">
+						<section class="dimensionColumna">
+							<img alt="Imagen de la cartelera de Titanic"
+							src="https://static2.elnortedecastilla.es/www/multimedia/201711/27/media/cortadas/GF0N6DA1-k4m-U50221626093faD-624x385@El%20Norte.jpg">
+							<header class="formatoEvento">Titanic</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/avatar.html" class="dimensionesEnlazado">
+					<article title="Avatar, una auténtica revolución" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Imagen de la pelicula avatar 2009"
+							src="https://cnet1.cbsistatic.com/img/WfkqAocgYhb8A85smYcTH_acFa8=/1200x630/2019/01/11/b251bf04-5bf8-469a-be8d-79489551460b/avatar-2009.jpg">
+							<header class="formatoEvento">Avatar</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/starwars.html" class="dimensionesEnlazado">
+					<article title="La guerra de las galaxias" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Imagen de la cartelera de star wars"
+							src="https://mediad.publicbroadcasting.net/p/wuis/files/styles/x_large/public/202002/marvel-star-wars-allegiance.jpg">
+							<header class="formatoEvento">Star Wars</header>
+						</section>
+					</article>
+				</a>
+
+
+				<a href="eventos/piratascaribe.html" class="dimensionesEnlazado">
+					<article title="piratas del caribe 5: los hombres muertos no cuentan cuentos" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Imagen de la cartelera de piratas del caribe 5"
+							src="https://i.blogs.es/13b8c5/piratascaribe/1366_2000.jpg">
+							<header class="formatoEvento">Piratas 5</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/venom.html" class="dimensionesEnlazado">
+					<article title="Venom, de la saga de Spiderman" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Pelicula venom proximo estreno"
+							src="https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/IQBLLU2NYNCBZHEAYSAQFEZM2M.jpg">
+							<header class="formatoEvento">Venom</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/divergente.html" class="dimensionesEnlazado">
+					<article title="De la saga insurgente: Divergente" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Imagen de la saga divergente"
+							src="https://i.ytimg.com/vi/tnVJqeUGVPg/maxresdefault.jpg">
+							<header class="formatoEvento">Divergente</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/8millas.html" class="dimensionesEnlazado">
+					<article title="8 mile, pelicula basada en la vida del mejor rapero de la historia" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="Imagen 8 mile Eminem"
+							src="https://i.ytimg.com/vi/xh1ROLEDyP4/maxresdefault.jpg">
+							<header class="formatoEvento">8 millas</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/joker.html" class="dimensionesEnlazado">
+					<article title="El joker, una pelicula para toda la familia" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="El joker, pelicula completa en español"
+							src="https://kinepolis.es/sites/kinepolis.es/files/styles/slider_16_9_960/public/a-visuals/Joker_ES_FA1.jpg?itok=ExMhEbjj">
+							<header class="formatoEvento">Joker</header>
+						</section>
+					</article>
+				</a>
+
+				<a href="eventos/endgame.html" class="dimensionesEnlazado">
+					<article title="Avengers Endgame: pelicula más taquillera de la historia" class="grid-item">
+						<section class="dimensionColumna">
+							<img alt="EngGame, película más taquillera de la historia"
+							src="	https://s3.amazonaws.com/prod.assets.thebanner/styles/article-large/s3/article/large/MM-037%20Avengers_%20Endgame.jpg?itok=VvMw-Ym7">
+							<header class="formatoEvento">EndGame</header>
+						</section>
+					</article>
+				</a>
+			</section>
+
+		</main>
+
+		<!-- Nuestro pie de pagina es un footer, contiene un elemento address ya que
+	 	 dentro tenemos una dirección de correo y también direcciones de domiclio-->
+		<footer class="pieDePagina">
+			<address>
+			Escrito por <a href="mailto:ahmedmkoubaa@correo.ugr.es">Ahmed El Moukhtari koubaa</a><br>
+			Visítanos:<br>
+			aprendiendo-despacito.com<br>
+			Avenida de la compilación, 22, 8080<br>
+			República del programador
+			</address>
+		</footer>
+	</body>
+</html>
