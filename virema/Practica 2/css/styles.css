@@ -1,0 +1,426 @@
+/******************************************************************************/
+/*-------------------------------- PRÁCTICA 2 --------------------------------*/
+
+button {
+	background-color: transparent;
+	border: none;
+}
+
+.imagenButton{
+	width: 100%;
+	padding: 0%;
+	margin: 0;
+}
+
+.comment{
+	grid-area: comment;
+	display: none; /*Al principio no se muestra*/
+
+	/* Pero en realidad es un display: grid;
+		sus atributos son los siguientes.
+	*/
+
+	grid-template-areas: "listaComentarios" "formulario";
+	grid-template-rows: 30% 70%;
+
+	/* flex-direction: column; */
+	/* align-items: stretch; */
+
+
+}
+
+.formulario{
+	grid-area: formulario;
+
+	align-self: flex-end;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2%;
+}
+
+#listaComentarios{
+	grid-area: listaComentarios;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.itemComentario {
+	font-size: 1.2em;
+	/* background-color: orange; */
+}
+
+
+/******************************************************************************/
+/*-------------------------------- PRÁCTICA 1 --------------------------------*/
+
+h1 {
+	margin: 0%;
+	color: blue;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+aside {
+	width: 100%;
+	background-color: transparent;
+}
+
+
+section {
+	/* width: 73%; */
+}
+
+
+header {
+	border: 0.2em solid black;
+	background-color: lightgrey;
+	text-align: center;
+
+	padding: 1%;
+	margin: 0%;
+	border-radius: 1%;
+	/* width: 98%; */
+}
+
+
+footer {
+	display: flex;
+	width: auto;
+	border: 0.15em solid black;
+	margin-top: 3%;
+	align-items: center;
+	justify-content: center;
+
+	background-color: rgba(32, 32, 32, 0.5);
+	color: white;
+	font-size: 2em;
+	font-family: serif;
+}
+
+body {
+	background-image: url('../imgs/fondo-body2.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	position:relative;
+}
+
+
+.flex-cabecera {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex-direction: row;
+	background-color: rgba(32, 32, 32, 0.5);
+}
+
+
+.tituloCabecera {
+	text-align: center;
+	font-family: lucida handwriting;
+	font-size: 5em;
+	color: lightgreen;
+}
+
+
+
+.imagenLogo {
+	width: 5em;
+	background-color: transparent;
+	border: 2% solid black;
+}
+
+
+.flex-main {
+	display: grid;
+	grid-template-columns: 20% auto;
+	margin-top: 1%;
+	width: 100%;
+	/* border: 0.2em solid black; */
+	background-color: transparent;
+
+	gap: 1%;
+
+	/* align-items: flex-start;
+	justify-content: center; */
+}
+
+
+.flex-listaLateral {
+	display: flex;
+
+	flex-direction: column;
+	background-color: transparent;
+
+	align-items: stretch;
+
+	/* width: 25em; */
+	/* width: 100%; */
+}
+
+
+.list-item {
+	font-size: 1.5em;
+	background-color: rgb(58, 228, 58 , 0.7);
+	border: 0.1em solid black;
+	border-radius: 0.15em;
+	text-align: center;
+	padding: 1.5%;
+}
+
+
+.grid-eventos {
+	display: grid;
+	grid-template-columns: auto auto 33.333%;
+	width: 100%;
+	grid-gap: 1%;
+	background-color: transparent;
+
+
+	/* flex-wrap: wrap; */
+	/* flex-direction: column; */
+	/* height: 200px; */
+}
+
+
+.item-evento{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+
+	width: 100%;
+	padding: 1%;
+	border-radius: 1%;
+	gap: 1%;
+
+	background-color: rgba(55, 55, 55, 0.8);
+	border: 0.15em solid black;
+}
+
+
+.tituloEvento {
+	font-size: 2em;
+	font-family: arial;
+	font-weight: bold;
+	color: lightgreen;
+}
+
+
+.imagenEvento {
+	width: 100%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+.enlaceInteres {
+	text-decoration: underline;
+	font-weight: bold;
+	color: black;
+}
+
+
+.enlaceEvento {
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+
+	color: transparent;
+	text-decoration: none;
+
+	/* min-width: 100%; */
+	width: 100%;
+	height: 100%;;
+	padding: 0%;
+	margin: 0%;
+}
+
+
+.tituloDescripcion
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3em;
+	font-family: sans-serif;
+	font-weight: bolder;
+	border: 0px solid transparent;
+}
+
+
+.social {
+	grid-area: social;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 99%;
+}
+
+.formatoVideo {
+	width: 100%;
+	height: 100%;
+	border-radius: 1%;
+}
+
+.imagenSocial {
+	width: 70%;
+	padding:0%;
+}
+
+
+.sinopsis-container {
+	display: flex;
+	flex-direction: column;
+	background-color: red;
+	width: 100%;
+	align-items: center;
+}
+
+.grid-descripcionEvento {
+	display: grid;
+	grid-template-columns: 40% auto auto;
+	grid-template-rows: auto 50% auto;
+	grid-template-areas:
+					"header header  header"
+					"video content content"
+               "video horarios horarios";
+	gap: 1%;
+}
+
+
+.header {
+	grid-area: header;
+}
+
+.sinopsis {
+	grid-area: content;
+	/* height: 120%; */
+}
+
+.horarios {
+	grid-area: horarios;
+}
+
+.box {
+  background-color: #444;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.video {
+	grid-area: video;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.formatoSinopsis {
+	text-align: justify;
+	padding-left: 1%;
+	padding-right: 1%;
+	font-size: 1.2em;
+}
+
+.formatoHorario {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-areas:
+								"headerHorario headerHorario"
+								"infoHorario social";
+	text-align: justify;
+	font-size: 1.5em;
+	padding: 0px;
+	margin: 0px;
+	/* grid-column-gap: 1%; */
+}
+
+
+.headerHorario {
+	/* height: fit-content; */
+	grid-area: headerHorario;
+}
+
+.infoHorario {
+	grid-area: infoHorario;
+	text-align: center;
+	width: 99%;
+}
+
+/* Estilos de color y fondo, estilos que no son de formato, sino que dan un
+diseño/vista diferente, pero solo en color, no cambian nada más */
+.verdeSobreNegro {
+	background-color: rgba(55, 55, 55, 0.8);
+	border: 0.15em solid black;
+	color: lightgreen;
+}
+
+.imagenEnlace {
+	width: 100%;
+}
+
+
+.impresion {
+	display: grid;
+	grid-template-row: 20% 60% 20%;
+	grid-template-areas:
+							"cabecera"
+							"cuerpo"
+							"pie";
+	background-image: none;
+	padding: 5%;
+}
+
+.cabeceraImpresion {
+	grid-area: cabecera;
+}
+
+.cuerpoImpresion {
+	grid-area: cuerpo;
+
+}
+
+.footerImpresion {
+	grid-area: pie;
+	background-color: white;
+	border: none;
+	text-align: center;
+}
+
+.formatoImpresion {
+	font-family: arial;
+	font-size: 1em;
+	color: black;
+	border: none;
+	background-color: white;
+	/* padding: 10%; */
+}
+
+.sizeImagenTexto {
+	width: 10%;
+	margin: 1%;
+	float: center;
+	/* padding: 5%; */
+}
+
+.alinearIzquierda {
+	float: left;
+}
+
+.alinearDerecha {
+	float: right;
+}
