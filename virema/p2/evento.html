@@ -82,21 +82,22 @@
 			  </div>
 
 			  <section id="comment" class="comment">
-				  <div id="listaComentarios"></div>
+				  <div class="verdeSobreNegro" id="listaComentarios"></div>
 
-				  <form class="formulario">
-					   <label>Nombre: </label><br>
-					 	<input id="nombre"><br>
+				  <div class="verdeSobreNegro">
+					  <form class="formulario">
+							<label>Nombre: </label><br>
+							<input id="nombre"><br>
 
-						<label>Email: </label><br>
-						<input id="email"><br>
+							<label>Email: </label><br>
+							<input id="email"><br>
 
-						<label>Texto comentario: </label><br>
-						<input id="textoComentario"><br>
+							<label>Texto comentario: </label><br>
+							<input onkeyup="censura();" id="textoComentario"><br>
 
-						<!-- <input onclick="enviarComentario()" type="button" value="Enviar comentario"> -->
-						<button onclick="enviarComentario()" type="button">Enviar comentarios</button>
-				  </form>
+							<button class="verdeSobreNegro" onclick="enviarComentario()" type="button">Enviar comentarios</button>
+					  </form>
+				  </div>
 
 			  </section>
 

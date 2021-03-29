@@ -82,6 +82,9 @@ function enviarComentario(){
 	// 5.- cargar el comentario en pantalla
 	loadComment(nuevoComentario);
 
+	// Reseteamos todos los campos de escritura al valor por defecto
+	nombre.value = texto.value = email.value = "";
+
 }
 
 function loadComment(newComment){
@@ -95,4 +98,46 @@ function loadComment(newComment){
 
 	// Add listItem to the listElement
 	listContainer.appendChild(listItem);
+}
+
+
+var inicioPalabra = 0;
+var finalPalabra = 0;
+
+var palabrasCensuradas = ['tonto', 'idiota', 'feo', 'apple', 'ios', 'mierda', 'puta', 'polla', 'gilipollas', 'cago', 'muertos'];
+
+function censura() {
+	// Analizaremos las palabras que contenga textoComentario
+	// y encontradaCensuraemos las que se encuentren en la lista de censurados
+	var textoComentario = document.getElementById('textoComentario');
+	var texto = textoComentario.value;
+
+	// Si se ha escrito algo
+	if (texto.length > 0) {
+		var lastChar = texto.length - 1;															 // irse a la última letra escrita
+		var charActual = texto[lastChar];														 // ultimo caracter escrito
+
+		if (charActual == ' ' || charActual == '\t' || charActual == '\n'){			 // si es uno de estos caracteres
+			finalPalabra = lastChar;																 // hemos escrito una palabra (palabra es algo entre espacios o caracteres no legibles)
+			ultimaPalabra = texto.substr(inicioPalabra, finalPalabra).trim();			 // extremos la palabra
+
+			var encontradaCensura = false;														 // no censuramos hasta que encontremos palabra mala
+			for (i = 0; i < palabrasCensuradas.length && !encontradaCensura; i++)	 // buscamos en lista de palabras censuradas
+				if (ultimaPalabra == palabrasCensuradas[i]) encontradaCensura = true; // si alguna coincide salimos del bucle
+
+			if (encontradaCensura){																	 // si encontramos palabra censurada
+				var asteriscos = "";																	 // creamos cadena de asteriscos
+				for (i = 0; i < ultimaPalabra.length; i++) asteriscos += "*";			 // tantos asteriscos como caracteres la palabra censurada
+
+				var textoCensurado = texto.substr(0, inicioPalabra)						 // generamos texto censurado (texto con palabra censurada cambiada por asteriscos)
+											+ asteriscos + charActual;
+				textoComentario.value = textoCensurado;										// asignamos dicho texto al campo donde se muestra el texto comentario
+
+			}
+
+			inicioPalabra = lastChar + 1;															// inicio sera la siguiente palabra
+		}
+	} else {																								// Si no hay nada escrito reseteamos las variables
+		inicioPalabra = finalPalabra = 0;
+	}
 }

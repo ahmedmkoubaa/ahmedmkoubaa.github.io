@@ -20,18 +20,17 @@ button {
 		sus atributos son los siguientes.
 	*/
 
-	grid-template-areas: "listaComentarios" "formulario";
-	grid-template-rows: 30% 70%;
+	grid-template-areas: "formulario" "listaComentarios";
+	grid-template-rows: fit-content auto;
 
-	/* flex-direction: column; */
-	/* align-items: stretch; */
-
-
+	grid-gap: 1%;
 }
 
 .formulario{
 	grid-area: formulario;
 
+
+	/* height: 95%; */
 	align-self: flex-end;
 	text-align: center;
 
@@ -42,6 +41,8 @@ button {
 
 #listaComentarios{
 	grid-area: listaComentarios;
+
+	max-height: 500px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -50,6 +51,7 @@ button {
 	font-size: 1.2em;
 	/* background-color: orange; */
 }
+
 
 
 /******************************************************************************/
