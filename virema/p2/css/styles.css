@@ -39,6 +39,11 @@ button {
 	gap: 2%;
 }
 
+#textoComentario{
+	height: 200px;
+	text-align: left;
+	justify-content: left;
+}
 #listaComentarios{
 	grid-area: listaComentarios;
 
