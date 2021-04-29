@@ -1,0 +1,23 @@
+{% extends "plantillaPrincipal.html" %}
+
+	{% block mainContent%}
+		<section class="grid-eventos">
+
+			{% for i in 0..(size-1) %}
+
+				<a class="enlaceEvento" href="evento.php?evento={{ eventos['id'][i] }}">
+					<article class="item-evento" title="{{ eventos['nombre'][i] }}">
+
+							<img class="imagenEvento"
+								src="{{ eventos['imagen'][i] }}"
+								alt="{{ eventos['alt'][i] }}"
+							</img>
+
+							<h1 class="tituloEvento">{{ eventos['nombre'][i] }}</h1>
+
+					</article>
+				</a>
+			{% endfor %}
+
+		</section>
+	{% endblock%}

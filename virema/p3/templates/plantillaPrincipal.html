@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>VIREMA: cine online</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<meta charset="UTF-8">
+		<meta name="description" content="Free Web tutorials">
+		<meta name="keywords" content="HTML, CSS, JavaScript, PHP">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+
+		<!-- Cabecera con titulo más descriptivo posible -->
+	    <!-- CÓDIGO OBTENIDO DESDE UN FICHERO PHP -->
+	   <header class="flex-cabecera">
+
+	      <!-- Imagen con el logo necesario -->
+	      <img class="imagenLogo" src="imgs/logo.png" alt="Logo de la página" width="100%">
+
+	      <!-- Titulo en grande de la página -->
+	      <h1 class="tituloCabecera"> Virema </h1>
+	   </header>
+
+		<!-- Contenido principal de la página -->
+		<main class="flex-main">
+			<!-- Contenido principal de la página -->
+		   <aside>
+		      <nav class="flex-listaLateral">
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://editorial.rottentomatoes.com/guide/essential-comedy-movies/" target="_blank">Top comedias de este siglo</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://www.filmaffinity.com/es/movie-group.php?group-id=549" target="_blank">Historias para no dormir ;)</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://www.espinof.com/listas/las-mejores-peliculas-de-accion-de-la-historia" target="_blank">Películas de acción recomendadas</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://www.espinof.com/listas/mejores-pedivculas-ciencia-ficcion-historia" target="_blank">Ciencia ficción: una mirada al futuro</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="http://www.sensacine.com/pedivculas/estrenos/es/" target="_blank">No te pierdas los próximos estrenos</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://taquilladecine.com/pedivculas-mas-taquilleras-2020/" target="_blank">Películas más taquilleras del 2020</a>
+		         </div>
+		         <div class="list-item">
+		            <a class="enlaceInteres" href="https://www.goldenglobes.com/articles/los-efectos-del-coronavirus-en-el-cine-mundial-al-momento" target="_blank">COVID: efecto en el cine</a>
+		         </div>
+		      </nav>
+		   </aside>
+
+			{% block mainContent %}
+				<!-- Bloque donde mostrar el contenido principal de cada página -->
+			{% endblock %}
+		</main>
+
+		<!-- Nuestro pie de pagina es un footer, contiene un elemento address ya que
+	    dentro tenemos una dirección de correo y también direcciones de domiclio-->
+	   <footer>
+	      <address>
+	         Escrito por <a href="mailto:ahmedmkoubaa@correo.ugr.es">Ahmed El Moukhtari koubaa</a><br>
+	         Visítanos:
+	         aprendiendo-despacito.com<br>
+	         Avenida de la compilación, 22, 8080<br>
+	         República del programador
+	      </address>
+	   </footer>
+
+	</body>
+</html>
