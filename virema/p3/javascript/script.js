@@ -18,6 +18,7 @@ let listaComentarios = [ /*new Comentario('ahmed', '24/11/200', 'Qué asco de p�
   new Comentario ('Pablo Antonio José', new Date(), 'Al principio pensé que no me gustaría, y al final también')
 ];
 
+<<<<<<< HEAD
 var seccionComentariosMostrada = false;
 var comentariosCargados = false;
 
@@ -46,6 +47,18 @@ function showComments(){
 
 		seccionComentariosMostrada = true;
 	}
+=======
+function showComments(){
+	var commentPanel = document.getElementById('comment');
+	commentPanel.style.display = "grid";
+
+	var descripcionEvento = document.getElementById("descripcionEvento");
+		descripcionEvento.style.gridTemplateAreas  =
+			'"header header  header header" "video content content comment" "video horarios horarios comment"';
+	descripcionEvento.style.gridTemplateColumns = "30% auto auto 40%";
+
+	cargarComentarios(listaComentarios);
+>>>>>>> 4c0d4d01dc6a441ee9910de4c3dd71a5568a9d2e
 
 	return false;
 }
@@ -122,7 +135,10 @@ function loadComment(newComment){
 var inicioPalabra = 0;
 var finalPalabra = 0;
 
+<<<<<<< HEAD
 // Palabras que a algunas personas les suelen resultar ofensivas o inadecuadas
+=======
+>>>>>>> 4c0d4d01dc6a441ee9910de4c3dd71a5568a9d2e
 var palabrasCensuradas = ['tonto', 'idiota', 'feo', 'apple', 'ios', 'mierda', 'puta', 'polla', 'gilipollas', 'cago', 'muertos'];
 
 function censura() {
