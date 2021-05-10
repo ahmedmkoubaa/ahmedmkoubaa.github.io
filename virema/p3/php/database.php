@@ -25,7 +25,7 @@
       mysqli_set_charset($mysqli, "utf8");
 
       //preparamos la consulta reemplazando los datos por el signo ?
-      $pr = $mysqli->prepare("SELECT nombre, sinopsis, coste, duracion,
+      $pr = $mysqli->prepare("SELECT id, nombre, sinopsis, imagen, coste, duracion,
          trailer, DATE_FORMAT(fecha, '%H:%i') as fecha FROM eventos WHERE id=?");
 
       //Indicamos los valores pasados por referencia
@@ -42,12 +42,13 @@
       	}
 
       	//Indicamos la variable donde se guardaran los resultados
-      	$pr->bind_result($nombre, $sinopsis, $coste, $duracion, $trailer, $fecha);
+      	$pr->bind_result($id, $nombre, $sinopsis, $imagen, $coste, $duracion, $trailer, $fecha);
 
       	//listamos todos los resultados
       	while($pr->fetch()){
-      	     $secure_res = ['nombre' => $nombre, 'sinopsis' => $sinopsis, 'coste' => $coste,
-              'duracion' => $duracion, 'trailer' => $trailer, 'fecha' => $fecha ];
+      	     $secure_res = ['id' => $id, 'nombre' => $nombre, 'sinopsis' => $sinopsis,
+              'imagen' => $imagen, 'coste' => $coste, 'duracion' => $duracion,
+              'trailer' => $trailer, 'fecha' => $fecha ];
       	}
 
       	//Cerramos la conexion

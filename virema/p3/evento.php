@@ -14,6 +14,7 @@
 
    $row = getEvento($idEv);
    echo $twig->render('evento.html', [
+         'id' => $row['id'],
          'titulo' => $row['nombre'],
          'sinopsis' => $row['sinopsis'],
          'coste' => $row['coste'],
