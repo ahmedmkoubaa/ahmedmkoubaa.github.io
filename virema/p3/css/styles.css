@@ -417,11 +417,25 @@ diseño/vista diferente, pero solo en color, no cambian nada más */
 	/* padding: 10%; */
 }
 
+h1.formatoImpresion {
+	font-size: 3em;
+	font-family: monospace;
+}
+
+h2.alineadoIzquierda{
+	text-align:left;
+}
+
+div.textoConImagen {
+	display: flex;
+	flex-direction: column;
+}
+
 .sizeImagenTexto {
-	width: 10%;
+	width: 70%;
 	margin: 1%;
-	float: center;
-	/* padding: 5%; */
+	align-self: center;
+	padding: 5%;
 }
 
 .alinearIzquierda {
