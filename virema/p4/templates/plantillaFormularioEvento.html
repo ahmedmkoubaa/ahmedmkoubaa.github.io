@@ -1,0 +1,15 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form%}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre pelicula: <input class="formularioEvento" type="text" name="nombre" value = "{{ evento.nombre }}">           <br>
+      Sinopsis: <textarea class="formularioEvento" name="sinopsis" rows="15" >{{ evento.sinopsis }}</textarea>                       <br>
+      Imagen cartelera: <input class="formularioEvento" type="text" name="imagen" value = "{{ evento.imagen }}">          <br>
+      Trailer: <input class="formularioEvento" type="text" name="trailer" value = "{{ evento.trailer }}">                 <br>
+      Coste: <input class="formularioEvento" type="number" name="coste" value = "{{ evento.coste }}">                     <br>
+      Duracion: <input class="formularioEvento" type="number" name="duracion" value = "{{ evento.duracion }}">            <br>
+      Fecha estreno: <input class="formularioEvento" type="datetime" name="fecha" value = "{{ evento.fecha }}">               <br>
+      Mensaje alternativo a imagen: <input class="formularioEvento" type="text" name="alt" value = "{{ evento.alt }}">                             <br>
+
+   {% endblock %}

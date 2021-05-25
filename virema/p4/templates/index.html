@@ -1,0 +1,83 @@
+{% extends "plantillaPrincipal.html" %}
+
+	{% block mainContent%}
+		<!-- {% if usuario != false %}
+			<div id="msg_prueba">
+				<h1>MENSAJES DE PRUEBAS DEL TIPO DE USUARIO</h1>
+				{% if usuario.tipo == 'REGISTRADO' or usuario.tipo == 'MODERADOR' or usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+					<h1>"Soy al menos registrado"</h1>
+				{% endif %}
+
+				{% if usuario.tipo == 'MODERADOR' or usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+					<h1>"Soy al menos moderador"</h1>
+				{% endif %}
+
+				{% if usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+					<h1>"Soy al menos gestor"</h1>
+				{% endif %}
+
+				{% if usuario.tipo == 'SUPER'%}
+					<h1>"Soy superusuario"</h1>
+				{% endif %}
+			</div>
+		{% endif%} -->
+
+		<section class="grid-eventos">
+
+			{% for evento in eventos %}
+
+
+				<article class="item-evento" title="{{ evento.nombre }}">
+					<a class="enlaceEvento" href="evento.php?evento={{ evento.id }}">
+						<img class="imagenEvento"
+							src="{{ evento.imagen}}"
+							alt="{{ evento.alt }}"
+						</img>
+
+						<h1 class="tituloEvento">{{ evento.nombre }}</h1>
+					</a>
+
+					{% if usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+						<div class="opcionesEvento">
+							<button class="opcionesEventoButton" type="button" onclick="editarEvento( {{ evento.id }} )">
+								EDITAR
+							</button>
+
+							<button class="opcionesEventoButton" type="button" onclick="eliminarEvento( {{evento.id}} )">
+								ELIMINAR
+							</button>
+						</div>
+					{% endif %}
+				</article>
+
+			{% endfor %}
+
+		</section>
+
+		<!-- <article class="enlaceEvento">
+			<div class="item-evento" title="{{ eventos.nombre[i] }}">
+
+				<!-- <a class="item-evento enlaceEvento" href="evento.php?evento={{ eventos.id[i] }}"> -->
+					<!-- <img class="imagenEvento"
+						src="{{ eventos.imagen[i] }}"
+						alt="{{ eventos.alt[i] }}"
+					</img>
+
+					<h1 class="tituloEvento">{{ eventos.nombre[i] }}</h1> -->
+				<!-- </a> -->
+<!--
+				{% if usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+					<div class="social verdeSobreNegro">
+						<button class="imagenButton" type="button" onclick="location.href = 'https://www.google.com'">
+							editar
+						</button>
+
+						<button class="imagenButton" type="button" onclick="showComments()">
+							eliminar
+						</button>
+					</div>
+				{% endif %}
+
+			</div>
+		</article> -->
+	{% endblock%}
