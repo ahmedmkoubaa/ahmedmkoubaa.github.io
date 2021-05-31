@@ -1,0 +1,19 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form %}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre: <input readonly type="text" name="nombre" value="{{usuario.nombre}}"
+                  onkeyup="validarInput(this)" onloadstart="validarInput(this)">       <br>
+
+      Apellidos: <input readonly type="text" name="apellidos" value="{{usuario.apellidos}}"
+                  onkeyup="validarInput(this)" onloadstart="validarInput(this)"">      <br>
+
+      Email: <input readonly type="text" name="email" value="{{usuario.email}}"
+                  onkeyup="validarInput(this)" onloadstart="validarInput(this)">       <br>
+
+      <br><br>
+
+      Está seguro de eliminar de la base de datos el registro:
+      <input type="checkbox" onclick="validarInput(this)" onloadstart="validarInput(this)"  name="confirmacion" value="true" >
+   {% endblock %}

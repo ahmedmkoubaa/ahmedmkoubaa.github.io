@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title>VIREMA: cine online</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<meta charset="UTF-8">
+		<meta name="description" content="Pagina de impresion de evento">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Ahmed El  Moukhtari Koubaa">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<!-- Usaremos la clase imprsion para hacer el formato más homogéneo en todo el body -->
+	<body class="impresion">
+
+		<!-- Definicion de una nueva cabecera para adecuarse al formato de impresión -->
+		<header class="formatoImpresion cabeceraImpresion">
+			<img class="formatoImpresion imagenLogo" alt="logo de virema" src="imgs/logo.png">
+			<h1 class="formatoImpresion">VIREMA</h1>
+		</header>
+
+		<!-- El contenido principal de la página se encuentra aquí. Tenemos un texto
+		con toda la información relevante para el proceso de impresión del documento -->
+		<main class="formatoImpresion cuerpoImpresion">
+			<div class="textoConImagen">
+				<div>
+					<h2 class="alineadoIzquierda"><strong>{{ nombre }}</strong></h2>
+					<p>
+						{{ sinopsis }}
+					</p>
+				</div>
+				<img class="sizeImagenTexto" src="{{ imagen }}" alt="{{ alt }}"></src>
+			</div>
+		</main>
+
+		<!-- Pie De Página, usamos footer, usamos la misma letra que en el main y centramos
+	 	en pantalla todo el texto y definimos un enlace al correo electronico del autor-->
+		<footer class="footerImpresion formatoImpresion">
+			<p>
+				Autor: <a href="mailto:ahmedmkoubaa@correo.ugr.es">Ahmed El Moukhtari Koubaa</a><br>
+				Gracias por hacer uso de nuestra "plataforma".<br>
+				No tenemos todos los derechos reservados ni nada así, si los tuviesemos, los pondríamos aquí.
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form %}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Foto perfil actual : <img class="fotoPerfil" src="{{ usuario.foto_perfil }}" /> <br>
+
+      Nombre: <input type="text" name="nombre" value="{{usuario.nombre}}" onkeydown="validarInput(this)" onloadstart="validarInput(this)" >           <br>
+      Apellidos: <input type="text" name="apellidos" value="{{usuario.apellidos}}" onkeydown="validarInput(this)" onloadstart="validarInput(this)">   <br>
+      Email: <input type="text" name="email" value="{{usuario.email}}" onkeydown="validarInput(this)" onloadstart="validarInput(this)">               <br>
+
+
+
+      <!-- Fecha nacimiento: <input type="date" name="fecha" required pattern="\d{2}/\d{2}/\d{4}" value="{{usuario.fecha_nacimiento}}">  <br> -->
+
+      {% if superuser == 'SUPER' %}
+         Rol: <input type="text" name="tipo" value="{{usuario.tipo}}" onkeydown="validarInput(this)" onloadstart="validarInput(this)">  <br>
+      {% else %}
+         Cambiar foto de perfil: <input onclick="validarInput(this)" type="file" name="imagen" value="{{ usuario.foto_perfil }}"/> <br>
+      {% endif %}
+
+   {% endblock %}

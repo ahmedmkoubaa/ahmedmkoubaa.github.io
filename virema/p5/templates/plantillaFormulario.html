@@ -1,0 +1,21 @@
+{% extends "plantillaPrincipal.html"%}
+
+   {% block mainBody %}
+      <div class="formAccesoCompleto">
+
+         <!-- Estructura generica del formulario, esperamos campos a rellenar -->
+         <form action="{{ redireccion }}" method="post" enctype="multipart/form-data" class="verdeSobreNegro formAcceso">
+
+              {% block form %}
+                  <!-- Aqui se introducen los campos a rellenar por el usuario -->
+              {% endblock %}
+
+              <input id="submitFormulario" disabled="true" type="submit" name="registrarse" value="{{ submit }}">
+              <br>
+         </form>
+
+         <br>
+         {{ mensaje }}
+      </div>
+
+   {% endblock %}

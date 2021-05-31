@@ -1,0 +1,60 @@
+{% extends "plantillaPrincipal.html"%}
+
+	{% block mainContent%}
+		<table class="listaUsuarios">
+		  <thead class="cabeceraLista">
+		    <tr style="text-align: left;">
+		      <th>Id</th>
+		      <th>Nombre</th>
+		      <th>Apellidos</th>
+		      <th>Email</th>
+				<th>Email</th>
+		      <th colspan="3">Acciones</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+			  {% for user in usuarios %}
+              <tr>
+                 <td >{{user.id}}          </td>
+                 <td >{{user.apellidos}}   </td>
+                 <td >{{user.nombre}}      </td>
+                 <td >{{user.email}}       </td>
+                 <td >{{user.tipo}}        </td>
+
+                 <td>
+	                  <button class="opcionesUsuarioButton"  type="button"  onclick="editarUsuario({{user.id}})" name="button">EDITAR</button>
+					  </td>
+
+					  <td>
+	                  <button class="opcionesUsuarioButton" type="button"  onclick="eliminarUsuario({{user.id}})" name="button">ELIMINAR</button>
+					  </td>
+
+              </tr>
+           {% endfor %}
+
+		  </tbody>
+		</table>
+
+      <!-- <div class="listaUsuarios">
+         {% for user in usuarios %}
+            <div class="listaUsuarios-item verdeSobreNegro">
+
+               <a  href='editarUsuario.php?idUser={{user.id}}'> {{user.id}}          </a>
+               <a  href='editarUsuario.php?idUser={{user.id}}'> {{user.apellidos}}   </a>
+               <a  href='editarUsuario.php?idUser={{user.id}}'> {{user.nombre}}      </a>
+               <a  href='editarUsuario.php?idUser={{user.id}}'> {{user.email}}       </a>
+               <a  href='editarUsuario.php?idUser={{user.id}}'> {{user.tipo}}        </a>
+
+               <div class="flexAccesoItem opcionesUsuarioButton">
+                     <button type="button"  onclick="editarUsuario({{user.id}})" name="button">EDITAR</button>
+               </div>
+               <div class="flexAccesoItem  opcionesUsuarioButton">
+                     <button type="button"  onclick="eliminarUsuario({{user.id}})" name="button">ELIMINAR</button>
+               </div>
+
+            </div>
+         {% endfor %}
+      </div> -->
+
+	{% endblock%}
