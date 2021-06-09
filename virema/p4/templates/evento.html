@@ -1,0 +1,79 @@
+{% extends "plantillaPrincipal.html"%}
+
+	{% block mainContent%}
+		<script type="text/javascript" defer>
+			var palabrasCensuradas = [
+				{% for palabra in censuradas%}
+					"{{palabra}}",
+				{% endfor %}
+			];
+
+			let listaComentarios = [
+				{% for comentario in comentarios %}
+					new Comentario ('{{comentario.usuario}}', '{{comentario.fecha}}', '{{comentario.texto}}'),
+				{% endfor %}
+			];
+
+		</script>
+
+		<article id="descripcionEvento" class="grid-descripcionEvento">
+		  <div class="header verdeSobreNegro tituloDescripcion"> {{ titulo }} </div>
+		  <div class="video">
+				<iframe class="formatoVideo" allowfullscreen src="https://www.youtube.com/embed/{{ trailer }}?autoplay=1&mute=1"></iframe>
+		  </div>
+
+		  <!-- En esta franja de la descripción se especifícan detalles más técnicos,  como el coste, duración y las redes sociales -->
+		  <div class="horarios verdeSobreNegro formatoHorario">
+				<div class="headerHorario">
+					<h2> Horarios </h2>
+				</div>
+
+				<p class="infoHorario">
+					Organizador: Virema 									<br>
+					Hora: {{ fecha }}  									<br>
+					Duración: {{ duracion }} minutos 				<br>
+					<span>Coste: {{ coste }} euros</span> 			<br>
+				</p>
+
+				<!-- Conjunto de iconos de redes sociales agrupados horizontalmente -->
+				<div class="social">
+					<!-- PATATA -->
+					<a class="imagenEnlace" href="https://facebook.com"> <img class="imagenSocial" src="imgs/facebook3.png"   alt="icono de facebook"> </a>
+					<a class="imagenEnlace" href="https://twitter.com">  <img class="imagenSocial" src="imgs/twitter3.png"    alt="icono de twitter"> </a>
+					<a class="imagenEnlace" href="evento_imprimir.php?evento={{ id }}"> <img class="imagenSocial" src="imgs/impresora2.png" alt="evento imprimir"> </a>
+
+					<button class="imagenButton" type="button" onclick="showComments()">
+						<img class="imagenButton" src="imgs/comment2.png"/img>
+					</button>
+				</div>
+		  </div>
+
+		  <section id="comment" class="comment">
+			  <div class="verdeSobreNegro" id="listaComentarios"></div>
+
+			  <div class="verdeSobreNegro">
+				  <form class="formulario">
+						<label>Nombre: </label><br>
+						<input id="nombre"><br>
+
+						<label>Email: </label><br>
+						<input id="email"><br>
+
+						<label>Texto comentario: </label><br>
+						<textarea onkeyup="censura();" id="textoComentario"></textarea><br>
+
+						<button class="verdeSobreNegro" onclick="enviarComentario()" type="button">Enviar comentarios</button>
+				  </form>
+			  </div>
+
+		  </section>
+
+		  <!-- Contiene la sinópsis de la película, lo dejamos como sección ya que es una sección importante de la descripción del evento -->
+		  <section class="sinopsis verdeSobreNegro formatoSinopsis">
+			  <h2>Sinópsis</h2>
+			  <p>
+				  {{sinopsis}}
+			  </p>
+		  </section>
+	  </article>
+	{% endblock%}

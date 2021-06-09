@@ -1,0 +1,15 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form %}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre: <input type="text" name="nombre" value="{{usuario.nombre}}" >           <br>
+      Apellidos: <input type="text" name="apellidos" value="{{usuario.apellidos}}">   <br>
+      Email: <input type="text" name="email" value="{{usuario.email}}">               <br>
+      <!-- Fecha nacimiento: <input type="date" name="fecha" required pattern="\d{2}/\d{2}/\d{4}" value="{{usuario.fecha_nacimiento}}">  <br> -->
+
+      {% if superuser == 'SUPER' %}
+         Rol: <input type="text" name="tipo" value="{{usuario.tipo}}">  <br>
+      {% endif %}
+
+   {% endblock %}

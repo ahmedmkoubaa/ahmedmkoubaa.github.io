@@ -1,0 +1,9 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form %}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre: <input readonly type="text" name="nombre" value="{{ comentario.usuario }}" >   <br>
+      Texto: <textarea class="formularioEvento" onkeyup="validarInput(this)" onloadstart="validarInput(this)" onkeydown="censura(this)" name="texto" rows="5" >{{ comentario.texto }}</textarea> <br>
+
+   {% endblock %}

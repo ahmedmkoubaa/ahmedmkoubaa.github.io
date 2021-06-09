@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	{% block head %}
+		<head>
+			<title>VIREMA: cine online</title>
+			<link rel="stylesheet" href="css/styles.css">
+			<meta charset="UTF-8">
+			<meta name="description" content="Plantilla de la página principal">
+			<meta name="keywords" content="HTML, CSS, JavaScript, PHP, Twig">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+			<script type="text/javascript" src="javascript/comentarios.js"></script>
+			<script type="text/javascript" src="javascript/opcionesEvento.js"></script>
+			<script type="text/javascript" src="javascript/opcionesUsuario.js"></script>
+		</head>
+	{% endblock%}
+
+	{% block fullBody %}
+
+		<body>
+			{% block header%}
+				<!-- Cabecera con titulo más descriptivo posible -->
+				<header class="flex-cabecera">
+
+					<!-- Imagen con el logo necesario -->
+					<img class="imagenLogo" src="imgs/logo.png" alt="Logo de la página" width="100%">
+
+					<!-- Titulo en grande de la página -->
+					<h1 class="tituloCabecera"> Virema </h1>
+
+						<div class="flexAcceso">
+
+						<!-- si el usuario es false, entonces no está logueado, lo tratamos como a un anonimo -->
+						{% if usuario == false %}
+							<!-- div que contiene las opciones para acceder -->
+
+							<div class="flexAccesoItem">
+									<button type="button"  onclick="location.href='login.php'"name="button">LOGIN</button>
+							</div>
+
+							<div class="flexAccesoItem">
+									<button type="button"  onclick="location.href='register.php'"name="button">REGISTRARSE</button>
+							</div>
+
+						{% else %}
+
+							{% if usuario.tipo == 'GESTOR' or usuario.tipo == 'SUPER' %}
+								<form action="index.php" method="post" class="flexAccesoItem">
+									<input class="flexBusquedaItem" type="search" name="nombreEvento" value="">
+									<input class"flexAccesoItem" type="submit" name="buscar" value="Buscar">
+								</form>
+
+								<div class="flexAccesoItem">
+										<button type="button"  onclick="aniadirEvento()" name="button">ADD EVENTO</button>
+								</div>
+
+
+
+							{% endif %}
+
+							{% if usuario.tipo == 'SUPER' %}
+								<div class="flexAccesoItem">
+										<button type="button"  onclick="listarUsuarios()" name="button">LISTAR USUARIOS</button>
+								</div>
+							{% endif %}
+
+
+
+							<div class="flexAccesoItem">
+									<button type="button"  onclick="editarMiUsuario()"name="button">MIS DATOS</button>
+							</div>
+
+							<div class="flexAccesoItem">
+									<button type="button"  onclick="cerrarSesion()"name="button">CERRAR SESION</button>
+							</div>
+						{% endif %}
+
+					</div>
+
+				</header>
+			{% endblock%}
+
+			{% block mainBody%}
+
+				<!-- Contenido principal de la página -->
+				<main class="flex-main">
+					{% block aside %}
+						<!-- Contenido principal de la página -->
+						<aside>
+							<nav class="flex-listaLateral">
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://editorial.rottentomatoes.com/guide/essential-comedy-movies/" target="_blank">Top comedias de este siglo</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://www.filmaffinity.com/es/movie-group.php?group-id=549" target="_blank">Historias para no dormir ;)</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://www.espinof.com/listas/las-mejores-peliculas-de-accion-de-la-historia" target="_blank">Películas de acción recomendadas</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://www.espinof.com/listas/mejores-pedivculas-ciencia-ficcion-historia" target="_blank">Ciencia ficción: una mirada al futuro</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="http://www.sensacine.com/pedivculas/estrenos/es/" target="_blank">No te pierdas los próximos estrenos</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://taquilladecine.com/pedivculas-mas-taquilleras-2020/" target="_blank">Películas más taquilleras del 2020</a>
+								</div>
+								<div class="list-item">
+									<a class="enlaceInteres" href="https://www.goldenglobes.com/articles/los-efectos-del-coronavirus-en-el-cine-mundial-al-momento" target="_blank">COVID: efecto en el cine</a>
+								</div>
+							</nav>
+						</aside>
+					{% endblock %}
+
+					{% block mainContent %}
+						<!-- Bloque donde mostrar el contenido principal de cada página -->
+					{% endblock %}
+				</main>
+			{% endblock%}
+	{% endblock %}
+		<!-- Nuestro pie de pagina es un footer, contiene un elemento address ya que
+	    dentro tenemos una dirección de correo y también direcciones de domiclio-->
+	   <footer>
+	      <address>
+	         Escrito por <a href="mailto:ahmedmkoubaa@correo.ugr.es">Ahmed El Moukhtari koubaa</a><br>
+	         Visítanos:
+	         aprendiendo-despacito.com<br>
+	         Avenida de la compilación, 22, 8080<br>
+	         República del programador
+	      </address>
+	   </footer>
+
+	</body>
+</html>

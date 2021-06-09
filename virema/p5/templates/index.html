@@ -1,0 +1,35 @@
+{% extends "plantillaPrincipal.html" %}
+
+	{% block mainContent%}
+		<section class="grid-eventos">
+
+			{% for evento in eventos %}
+
+				<article class="item-evento" title="{{ evento.nombre }}">
+					<a class="enlaceEvento" href="evento.php?evento={{ evento.id }}">
+						<img class="imagenEvento"
+							src="{{ evento.imagen}}"
+							alt="{{ evento.alt }}"
+						</img>
+
+						<h1 class="tituloEvento">{{ evento.nombre }}</h1>
+					</a>
+
+					{% if tipo == 'GESTOR' or tipo == 'SUPER' %}
+						<div class="opcionesEvento">
+							<button class="opcionesEventoButton" type="button" onclick="editarEvento( {{ evento.id }} )">
+								EDITAR
+							</button>
+
+							<button class="opcionesEventoButton" type="button" onclick="eliminarEvento( {{evento.id}} )">
+								ELIMINAR
+							</button>
+						</div>
+					{% endif %}
+				</article>
+
+			{% endfor %}
+
+		</section>
+
+	{% endblock%}

@@ -1,0 +1,13 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form%}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre: <input type="text" name="nombre">           <br>
+      Apellidos: <input type="text" name="apellidos">     <br>
+      Fecha nacimiento: <input type="date" name="fecha">  <br>
+      Email:<input type="text" name="email">              <br>
+      Nombre de usuario: <input type="text" name="user">  <br>
+      Contraseña: <input type="password" name="pass">     <br>
+
+   {% endblock %}

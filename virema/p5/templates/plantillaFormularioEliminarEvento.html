@@ -1,0 +1,14 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form %}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre pelicula: <input readonly class="formularioEvento" onkeyup="validarInput(this)" onloadstart="validarInput(this)" type="text" name="nombre" value = "{{ evento.nombre }}">           <br>
+      Sinopsis: <textarea readonly class="formularioEvento" onkeyup="validarInput(this)" onloadstart="validarInput(this)" name="sinopsis" rows="15" >{{ evento.sinopsis }}</textarea>            <br>
+
+      <br><br>
+
+      Está seguro de eliminar de la base de datos el registro:
+      <input type="checkbox" onclick="validarInput(this)" onloadstart="validarInput(this)"  name="confirmacion" value="true" >
+
+   {% endblock %}

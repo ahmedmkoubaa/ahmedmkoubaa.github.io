@@ -1,0 +1,36 @@
+{% extends "plantillaFormulario.html" %}
+
+   {% block form%}
+
+      <!-- Para registrarse habra que rellenar todos los campos -->
+      Nombre pelicula: <input class="formularioEvento" type="text" name="nombre" value = "{{ evento.nombre }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">           <br>
+
+      Sinopsis: <textarea class="formularioEvento" name="sinopsis" rows="15"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)"
+                        >{{ evento.sinopsis }}</textarea>                       <br>
+
+      Imagen cartelera: <input class="formularioEvento" type="text" name="imagen" value = "{{ evento.imagen }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">          <br>
+
+      Trailer: <input class="formularioEvento" type="text" name="trailer" value = "{{ evento.trailer }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">                 <br>
+
+      Coste: <input class="formularioEvento" type="number" name="coste" value = "{{ evento.coste }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">                     <br>
+
+      Duracion: <input class="formularioEvento" type="number" name="duracion" value = "{{ evento.duracion }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">            <br>
+
+      Fecha estreno: <input class="formularioEvento" type="datetime" name="fecha" value = "{{ evento.fecha }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">               <br>
+
+      Mensaje alternativo a imagen: <input class="formularioEvento" type="text" name="alt" value = "{{ evento.alt }}"
+                        onkeydown="validarInput(this)" onloadstart="validarInput(this)">                             <br>
+
+      Publicado: <input type="checkbox" onclick="validarInput(this)" onloadstart="validarInput(this)"  name="publicado" value="1"
+                        {% if evento.publicado == 1 %} checked='true' {% endif %} >
+
+      Etiquetas: <textarea class="formularioEvento" onkeydown="validarInput(this)" name="etiquetas" rows="5" >{{ evento.etiquetas }}</textarea>                       <br>
+
+   {% endblock %}
