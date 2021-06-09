@@ -1,5 +1,5 @@
 import * as THREE from '../../libs/three.module.js'
-import * as TWEEN from '../../../libs/tween.esm.js'
+import * as TWEEN from '../../libs/tween.esm.js'
 import * as Constants from '../Constantes.js'
 import {Cola} from './Cola.js'
 import {CuerpoAletas} from './CuerpoAletas.js'
