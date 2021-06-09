@@ -459,7 +459,7 @@ class Juego extends THREE.Scene {
 	  // var textureCube = new THREE.CubeTextureLoader().load( urls );
 	  // this.background = textureCube;
 
-	  var path="../../imgs/background/uw_sky/";
+	  var path="../imgs/background/uw_sky/";
 	  var format='.jpg';
 	  // console.log(path+'px'+format);
 	  var urls = [
