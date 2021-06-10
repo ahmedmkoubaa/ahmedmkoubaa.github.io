@@ -733,6 +733,49 @@ class Juego extends THREE.Scene {
 
 
 	}
+	
+	// MODULO PARA CONECTIVIDAD CON DISPOSITIVOS TACTILES
+	// comportamiento ante evento de inicio
+	onTouchStart(event) {
+		var tiempo = new Date() - this.tiempoUltimaPulsacion;
+		var intervalo = 500;
+
+		if (!this.partidaIniciada && tiempo < intervalo) {
+			console.log("comenzando partida");
+			this.onKeyDown({which: Juego.COMENZAR});
+		}
+		else {
+			console.log("Pulsado una vez, es un clic normal");
+			var miEvento = event.touches[0];
+			this.onMouseDown( miEvento );
+
+			this.ultimaPulsacion = this.getMouse( miEvento );
+			this.tiempoUltimaPulsacion = new Date();
+		}
+	}
+
+	// comportamiento ante evento de movimiento de toque
+	onTouchMove(event) {
+		if ( this.moviendo != true ) {
+			console.log("comenzando movimiento");
+			this.ultimaPulsacion = this.getMouse ( event.touches[0] );
+			this.moviendo = true;
+		}
+
+		this.movimientoFinal = event.touches[0];
+	}
+
+	// comportamiento ante evento de finalizar toque
+	onTouchEnd(event) {
+
+		if (this.moviendo == true) {
+			console.log("Finalizando movimiento");
+			// console.log(this.ultimaPulsacion);
+
+			this.onMouseUp( this.movimientoFinal );
+			this.moviendo = false;
+		}
+	}
 }
 
 // TECLAS WASD
@@ -758,7 +801,11 @@ $(function () {
   window.addEventListener ("keydown", (event) => juego.onKeyDown (event), true);
   window.addEventListener ("pointerdown", (event) => juego.onMouseDown(event), true);
   window.addEventListener ("pointerup", (event) => juego.onMouseUp(event), true);
-
+	
+  
+  window.addEventListener ("touchstart", (event) => juego.onTouchStart(event), true);
+  window.addEventListener ("touchmove", (event) => juego.onTouchMove(event), true);
+  window.addEventListener ("touchend", (event) => juego.onTouchEnd(event), true);
 
   // Que no se nos olvide, la primera visualización.
   juego.update();
