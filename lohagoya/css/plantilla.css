@@ -1,0 +1,323 @@
+body {
+   background-image: url("../imgs/edificio.jpg");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   position:relative;
+}
+
+.borde {
+   border: 5px solid black;
+}
+
+
+.header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+   align-content: center;
+
+   padding: 0px;
+   background-color: rgb(181, 234, 234);
+
+   text-align: center;
+   font-family: fantasy;
+
+   font-size: 2em;
+   z-index: 2;
+}
+
+.imagenPost {
+   width: 100%;
+   height: 100%;
+
+   max-height: 100%;
+
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+
+
+
+.center {
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+}
+
+.post {
+   display: flex;
+   flex-direction: row;
+   background-color: rgba(55, 55, 55, 0.5);
+   height: 550px;
+
+   margin-bottom: 20px;
+}
+
+.formulario {
+   font-size: 0.5em;
+   display: flex;
+   flex-direction: column;
+   grid-row-gap: 10px;
+}
+
+.transparente {
+   background-color: transparent;
+   border: 0px solid transparent;
+}
+
+.imagenServicio {
+   height: 100px;
+   width: 100%;
+}
+
+.sombreado {
+   box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.4),
+      0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+.indicators {
+   z-index: 1;
+}
+
+.imagenCarouselPresentacion {
+   width: 100%;
+   height: 100%;
+}
+
+.aligner {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   width: 100%;
+}
+
+.tituloGrande {
+   text-align: center;
+   font-size: 5.4em;
+
+   padding: 0px;
+   margin: 0px;
+}
+
+.overlay {
+   position: absolute;
+   z-index: 1;
+
+   margin: auto;
+   margin-top: 40%;
+   /* width: 100%; */
+   /* height: 100%; */
+   max-width: 50%;
+}
+
+#presentacion {
+   background: rgb(237, 246, 229);
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 10px;
+
+   /* font-size: 3em; */
+}
+
+#masDeNosotros {
+   background-color: rgb(255, 188, 188);
+
+   font-family: lobster;
+   font-size: 4em;
+
+   border-radius: 5px;
+   padding: 10px;
+   margin: 14px;
+
+   box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.4),
+      0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+#masDeNosotros:hover {
+   background-color: rgba(200, 200, 200, 0.8);
+}
+
+#tituloPresentacion {
+   margin-bottom: 20px;
+}
+
+#tituloPagina {
+   font-family: lobster;
+   padding-bottom: 5px;
+}
+
+#textoPresentacion {
+   font-size: 2em;
+}
+
+#botonEnviar {
+   width: fit-content;
+}
+
+#lateralIzquierdo {
+   position: fixed;
+
+   height: 10%;
+   width: 20%;
+}
+
+#servicios {
+   padding-top: 20px;
+}
+
+#social {
+   display: flex;
+   flex-direction: row;
+
+   align-content: flex-end;
+   justify-content: flex-end;
+
+   padding-right: 12px;
+
+   gap: 5px;
+}
+
+#socialSmall{
+   display: none;
+   padding: 10px;
+}
+
+.imgSocial {
+   width: 40px;
+   height: 40px;
+}
+
+.sinEspaciosAlrededor {
+   margin: 0px;
+   margin-left: 0px;
+   margin-right: 0px;
+
+   padding: 0px;
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+.marcoImagenPublicacion {
+   height: 100%;
+   background: red;
+}
+
+.letraGrande {
+   font-size: 3em;
+   word-wrap: break-word;
+}
+
+.letraMediana {
+   font-size: 1.5em;
+   word-wrap: break-word;
+}
+
+.letraPequenia {
+   font-size: 0.9em;
+}
+
+.botonServicio {
+   background-color: transparent;
+   border: 0px solid transparent;
+
+   font-family: sans-serif;
+   font-size: 2em;
+}
+
+.publicacion {
+   margin: 0px;
+   padding: 0px;
+   background: rgb(238, 238, 238);
+   border-radius: 10px;
+
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+   box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.4),
+      0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+.zoom {
+   transition: transform .2s;
+}
+
+.zoom:hover, .zoom:active, .zoom:focus {
+   border-radius: 0px;
+   z-index: 100;
+   position: sticky;
+
+   transform: scale(1.1);
+   -ms-transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+}
+
+.lobster {
+   font-family: lobster;
+}
+
+
+@media screen and (max-width: 1500px) {
+   .botonServicio {
+      font-size: 1.5em;
+   }
+}
+
+@media screen and (max-width: 1200px) {
+   .header {
+      font-size: 1em;
+      padding: 0px;
+   }
+
+   .imagenPost {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      border-bottom-left-radius: 0px;
+   }
+
+   #servicios {display: none;}
+
+   #tituloPagina {
+      padding-left: 145px;
+   }
+}
+
+@media screen and (max-width: 720px) {
+   #tituloPagina {
+      font-size: 2em;
+      padding-left: 80px;
+   }
+
+   #presentacion {
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+
+   #textoPresentacion {
+      font-size: 1.2em;
+   }
+
+   #social{
+      display: none;
+   }
+
+   #socialSmall {
+      display: block;
+   }
+
+   .letraGrande {
+      font-size: 2em;
+   }
+
+   .letraMediana {
+      font-size: 1em;
+   }
+}

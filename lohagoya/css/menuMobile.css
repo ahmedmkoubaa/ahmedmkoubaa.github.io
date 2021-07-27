@@ -1,0 +1,70 @@
+#menuMobile {
+   padding-top: 5px;
+   display: none;
+   transition: width .2s;
+   z-index: 2;
+}
+
+#menuMobileFacebook {
+   background-color:rgb(26, 163, 255);
+}
+
+#menuMobileWhatsapp {
+   background-color: rgb(46, 184, 46);
+}
+
+#menuMobileInstagram {
+   background-color: rgb(255, 51, 153)
+}
+
+#menuMobileTelefono {
+   background-color: rgb(255, 255, 128);
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+
+  display: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  padding-bottom: 10px;
+
+  box-shadow:
+     0 4px 8px 0 rgba(0, 0, 0, 0.4),
+     0 6px 20px 0 rgba(0, 0, 0, 0.29);
+
+}
+
+.topnav a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-family: lobster;
+
+  padding: 7px 8px;
+  border-radius: 5px;
+
+  margin-top: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.topnav a:focus {
+  background-color: #ddd;
+  color: black;
+}
+
+.scrollMenuMobile {
+   position: fixed;
+   width: 100%;
+   top: 0px;
+   z-index: 1;
+}
