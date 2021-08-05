@@ -10,10 +10,12 @@ window.onscroll = function() {
 window.onload = function () {
    adaptarImagenesDePublicaciones();
    adaptarCarouselPrincipal();
+   adaptarCarouselPresentacionPorDispositivo();
 }
 
 window.onorientationchange = function () {
    reiniciarAside();
+   adaptarCarouselPresentacionPorDispositivo();
 }
 
 window.onchange = function () {
@@ -25,9 +27,12 @@ window.onresize = function () {
    adaptarTodasImagenes();
    contraerSocialMobile();
    adaptarImagenesDePublicaciones();
+   
    adaptarCarouselPrincipal();
+   adaptarCarouselPresentacionPorDispositivo();
 }
 
 screen.orientation.onchange = function() {
    reiniciarAside();
+   adaptarCarouselPresentacionPorDispositivo();
 };
